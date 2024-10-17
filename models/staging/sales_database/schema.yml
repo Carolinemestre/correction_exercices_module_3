@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: stg_sales_database__order
+    description: This table contains information about orders
