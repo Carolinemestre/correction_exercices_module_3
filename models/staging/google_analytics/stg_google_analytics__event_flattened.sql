@@ -1,8 +1,4 @@
- {{ config(
-    cluster_by=['event_name']
-) }}
- 
- SELECT
+SELECT
    event_name,
    event_bundle_sequence_id as event_id,
    TIMESTAMP_MICROS(event_timestamp) AS event_timestamp,
