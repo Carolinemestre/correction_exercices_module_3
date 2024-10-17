@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_first_dbt_project'
+name: 'my_new_project'
 version: '1.0.0'
 config-version: 2
 
@@ -36,24 +36,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  +persist_docs:
-      relation: true
-      columns: true
-  my_first_dbt_project:
-    staging:
-      google_analytics:
-        schema: stg_google_analytics
-      sales_database:
-        schema: stg_sales_database
-      google_sheets:
-        schema: stg_google_sheets
-
-    intermediate:
-      sales_database: 
-        schema: int_sales_database
-      google_analytics:
-        schema: int_google_analytics
-
-    mart:
-      schema: mart
-
+  my_new_project:
+    # Applies to all files under models/example/
+    example:
+      +materialized: table
