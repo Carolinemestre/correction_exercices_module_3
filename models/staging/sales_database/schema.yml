@@ -3,3 +3,14 @@ version: 2
 models:
   - name: stg_sales_database__order
     description: This table contains information about orders
+
+    columns:
+      - name: order_id
+        description: This is a unique identifier for the order
+
+  - name: stg_sales_database__order_item
+    description: This table contains information about orders at order_item level
+
+    columns:
+      - name: order_item_id
+        description: This is a unique identifier for the order item
