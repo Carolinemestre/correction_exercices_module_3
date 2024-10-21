@@ -42,7 +42,7 @@ o.total_distinct_items,
 o.total_orders,
 p.product_id AS favorite_product_id
 FROM {{ ref('stg_sales_database__user') }} AS u
-LEFT JOIN orders_summary o ON u.user_id = o.user_id
+INNER JOIN orders_summary o ON u.user_id = o.user_id
 LEFT JOIN product_summary p
 ON o.user_id = p.user_id
 AND p.rn = 1
