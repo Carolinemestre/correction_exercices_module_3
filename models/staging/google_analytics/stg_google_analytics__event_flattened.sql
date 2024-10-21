@@ -1,6 +1,5 @@
 SELECT
    event_name,
-   event_bundle_sequence_id as event_id,
    TIMESTAMP_MICROS(event_timestamp) AS event_timestamp,
    user_pseudo_id,
    user_first_touch_timestamp,
