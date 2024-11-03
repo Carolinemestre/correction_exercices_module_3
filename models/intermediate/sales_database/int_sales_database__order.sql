@@ -24,11 +24,11 @@ select o.order_id,
     o.order_approved_at,
     u.user_city,
     u.user_state,
-    f.sum_feedback_score,
-    f.total_feedbacks,
-    oi.total_order_amount,
-    oi.total_items,
-    oi.total_distinct_items
+    coalesce(f.sum_feedback_score,0) as sum_feedback_score,
+    coalesce(f.total_feedbacks,0) as total_feedbacks,
+    coalesce(oi.total_order_amount,0) as total_order_amount,
+    coalesce(oi.total_items,0) as total_items,
+    coalesce(oi.total_distinct_items,0) as total_distinct_items
 from {{ ref('stg_sales_database__order') }} as o
 left join order_item_grouped_by_order as oi on o.order_id = oi.order_id
 left join feedback_grouped_by_order as f on f.order_id = o.order_id
